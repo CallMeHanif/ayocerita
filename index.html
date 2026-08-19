@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f5ef" />
+  <title>AyoCerita — Cerita aja, tanpa nama.</title>
+  <meta
+    name="description"
+    content="AyoCerita adalah tempat sederhana untuk menuliskan cerita secara anonim."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="story-card" aria-labelledby="page-title">
+      <div class="topbar">
+        <div class="brand">
+          <span>AyoCerita</span>
+        </div>
+
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Ganti tema"
+          title="Ganti tema"
+        >
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="intro">
+        <h1 id="page-title">Ada yang pengen kamu ceritain?</h1>
+        <p class="subtitle">
+          Tulis aja di sini. Nggak perlu bilang kamu siapa.
+        </p>
+      </div>
+
+      <form id="storyForm" novalidate>
+        <div class="field">
+          <div class="textarea-wrap">
+            <textarea
+              id="story"
+              name="story"
+              maxlength="3000"
+              placeholder="Hari ini aku..."
+              aria-describedby="storyHelp characterCount"
+              required
+            ></textarea>
+
+            <div class="field-footer">
+              <span id="storyHelp">Maks. 3.000 karakter</span>
+              <span id="characterCount">0 / 3000</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="submitButton" class="submit-button" type="submit" disabled>
+          <span>Kirim Cerita</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </button>
+
+        <p class="privacy-note">
+          Tenang, ini anonim. Ceritamu nggak bakal muncul ke orang lain.
+        </p>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <footer>
+      <span>© 2026 AyoCerita</span>
+      <span class="dot">•</span>
+      <span>by Hanif Alkhairi</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
